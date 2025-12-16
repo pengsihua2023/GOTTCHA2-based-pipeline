@@ -106,23 +106,7 @@ Edit the SLURM directives at the top of each script:
 #SBATCH --time=72:00:00
 ```
 
-## Monitoring Jobs
 
-### Check Job Status
-```bash
-squeue -u $USER
-```
-
-### View Job Output
-```bash
-tail -f Viral_Classification_ShortRead_<job_id>.out
-tail -f Viral_Classification_LongRead_<job_id>.out
-```
-
-### Cancel a Job
-```bash
-scancel <job_id>
-```
 
 ## Supported File Formats
 
@@ -131,36 +115,11 @@ scancel <job_id>
 - `.fastq` (uncompressed FASTQ)
 - `.fq` (uncompressed FASTQ)
 
-## Troubleshooting
-
-### Common Issues
-
-1. **Database not found:**
-   - Verify database path in the script matches your installation
-   - Ensure `.mmi` index file exists
-
-2. **Conda environment activation fails:**
-   - Check conda environment path
-   - Ensure Miniforge3 module is available
-
-3. **Out of memory:**
-   - Increase memory allocation in SLURM directives
-   - Consider using a subset of data for testing
-
-4. **Job timeout:**
-   - Increase time limit in SLURM directives
-   - Check if input files are too large
 
 ## References
 
 - GOTTCHA2: [https://github.com/poeli/GOTTCHA2](https://github.com/poeli/GOTTCHA2)
 - Publication: Freitas et al. (2018) "Accurate read-based metagenome characterization using a hierarchical suite of unique signatures"
 
-## Contact
 
-For questions or issues, please contact the system administrator or refer to the GOTTCHA2 documentation.
-
-## License
-
-This workflow is provided as-is for research purposes.
 
